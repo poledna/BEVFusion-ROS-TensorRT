@@ -1,32 +1,32 @@
 
 # 1 配置 CUDA TensorRT cudnn路径
 # ----------------x86------------------
-export TensorRT_Lib=/home/lin/software/TensorRT-8.5.3.1/lib
-export TensorRT_Inc=/home/lin/software/TensorRT-8.5.3.1/include
-export TensorRT_Bin=/home/lin/software/TensorRT-8.5.3.1/bin
+#export TensorRT_Lib=/home/lin/software/TensorRT-8.5.3.1/lib
+#export TensorRT_Inc=/home/lin/software/TensorRT-8.5.3.1/include
+#export TensorRT_Bin=/home/lin/software/TensorRT-8.5.3.1/bin
+#
+#export CUDA_Lib=/usr/local/cuda/lib64
+#export CUDA_Inc=/usr/local/cuda/include
+#export CUDA_Bin=/usr/local/cuda/bin
+#export CUDA_HOME=/usr/local/cuda
 
-export CUDA_Lib=/usr/local/cuda/lib64
-export CUDA_Inc=/usr/local/cuda/include
-export CUDA_Bin=/usr/local/cuda/bin
-export CUDA_HOME=/usr/local/cuda
-
-export CUDNN_Lib=/usr/local/cuda/lib64
+#export CUDNN_Lib=/usr/local/cuda/lib64
 # -----------------------------------------------------
 
 # ----------------orin--------------------
 # # tensorrt
-# export TensorRT_Inc=/usr/include
-# export TensorRT_Lib=/usr/lib/aarch64-linux-gnu
-# export TensorRT_Bin=/usr/src/tensorrt/bin
+ export TensorRT_Inc=/usr/include
+ export TensorRT_Lib=/usr/lib/aarch64-linux-gnu
+ export TensorRT_Bin=/usr/src/tensorrt/bin
 
 # # cuda
-# export CUDA_Lib=/usr/local/cuda-11.4/targets/aarch64-linux/lib
-# export CUDA_Inc=/usr/local/cuda-11.4/include
-# export CUDA_Bin=/usr/local/cuda/bin
-# export CUDA_HOME=/usr/local/cuda
+export CUDA_Lib=/usr/local/cuda-11.4/targets/aarch64-linux/lib
+export CUDA_Inc=/usr/local/cuda-11.4/include
+export CUDA_Bin=/usr/local/cuda/bin
+export CUDA_HOME=/usr/local/cuda
 
 # # cudnn
-# export CUDNN_Lib=/usr/lib/aarch64-linux-gnu
+export CUDNN_Lib=/usr/lib/aarch64-linux-gnu
 # -------------------------------------
 
 

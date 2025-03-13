@@ -1,8 +1,8 @@
 <launch>
     <!-- model_name: resnet50/resnet50int8/swint -->
     <!-- precision: fp16/int8 -->
-    <param name="model_name" type="string" value="swint" />
-    <param name="precision" type="string" value="fp16" />
+    <param name="model_name" type="string" value="resnet50int8" />
+    <param name="precision" type="string" value="int8" />
 
     <!-- ros topic name -->
     <param name="topic_cloud"  type="string" value="/lidar_top" />
