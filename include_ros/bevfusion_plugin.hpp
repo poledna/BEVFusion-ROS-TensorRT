@@ -52,9 +52,7 @@ unsigned char* cv2stb(const cv::Mat &image);
 float *pcl2arr(pcl::PointCloud<pcl::PointXYZI>::Ptr cloud);
 
 std::vector<unsigned char*> load_images(const std::string& root);
-std::vector<unsigned char*> load_images(
-  const cv::Mat &f_img, const cv::Mat &fl_img, const cv::Mat &fr_img,
-  const cv::Mat &b_img, const cv::Mat &bl_img, const cv::Mat &br_img);
+std::vector<unsigned char*> load_images(const cv::Mat &f_img);
 
 void free_images(std::vector<unsigned char*>& images);
 

@@ -30,22 +30,14 @@ class RosNode
   ros::Publisher pub_img_;
 
   std::string topic_cloud_;
-  std::string topic_img_f_, topic_img_fl_, topic_img_fr_;
-  std::string topic_img_b_, topic_img_bl_, topic_img_br_;
-
+  std::string topic_img_f_;
 
   message_filters::Subscriber<sensor_msgs::PointCloud2> sub_cloud_; 
   message_filters::Subscriber<sensor_msgs::Image> sub_f_img_; 
-  message_filters::Subscriber<sensor_msgs::Image> sub_fl_img_; 
-  message_filters::Subscriber<sensor_msgs::Image> sub_fr_img_; 
-  message_filters::Subscriber<sensor_msgs::Image> sub_b_img_; 
-  message_filters::Subscriber<sensor_msgs::Image> sub_bl_img_; 
-  message_filters::Subscriber<sensor_msgs::Image> sub_br_img_; 
 
   typedef message_filters::sync_policies::ApproximateTime<
     sensor_msgs::PointCloud2, 
-    sensor_msgs::Image, sensor_msgs::Image, sensor_msgs::Image,
-    sensor_msgs::Image, sensor_msgs::Image, sensor_msgs::Image> MySyncPolicy;
+    sensor_msgs::Image> MySyncPolicy;
   
   typedef message_filters::Synchronizer<MySyncPolicy> Sync;
 	std::shared_ptr<Sync> sync_;
@@ -58,12 +50,7 @@ class RosNode
   ~RosNode(){};
   void getTopicName();
   void callback(const sensor_msgs::PointCloud2ConstPtr& msg_cloud, 
-    const sensor_msgs::ImageConstPtr& msg_f_img,
-    const sensor_msgs::ImageConstPtr& msg_fl_img,
-    const sensor_msgs::ImageConstPtr& msg_fr_img,
-    const sensor_msgs::ImageConstPtr& msg_b_img,
-    const sensor_msgs::ImageConstPtr& msg_bl_img,
-    const sensor_msgs::ImageConstPtr& msg_br_img);
+    const sensor_msgs::ImageConstPtr& msg_f_img);
 };
 
 #endif

@@ -87,16 +87,10 @@ std::vector<unsigned char*> load_images(const std::string& data_path)
 
 // 直接读取6张图
 std::vector<unsigned char*> load_images(
-  const cv::Mat &f_img, const cv::Mat &fl_img, const cv::Mat &fr_img,
-  const cv::Mat &b_img, const cv::Mat &bl_img, const cv::Mat &br_img) 
+  const cv::Mat &f_img) 
 {
   std::vector<unsigned char*> _images;
   _images.push_back(cv2stb( f_img));
-  _images.push_back(cv2stb(fl_img));
-  _images.push_back(cv2stb(fr_img));
-  _images.push_back(cv2stb( b_img));
-  _images.push_back(cv2stb(bl_img));
-  _images.push_back(cv2stb(br_img));
   return _images; 
 }
 
