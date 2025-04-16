@@ -201,11 +201,11 @@ std::shared_ptr<bevfusion::Core> create_core(const std::string& model, const std
 
   printf("Create by %s, %s\n", model.c_str(), precision.c_str());
   bevfusion::camera::NormalizationParameter normalization;
-  normalization.image_width = 1600;
-  normalization.image_height = 900;
+  normalization.image_width = 1936;
+  normalization.image_height = 1464;
   normalization.output_width = 704;
   normalization.output_height = 256;
-  normalization.num_camera = 6;
+  normalization.num_camera = 1;
   normalization.resize_lim = 0.48f;
   normalization.interpolation = bevfusion::camera::Interpolation::Bilinear;
 

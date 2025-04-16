@@ -103,8 +103,8 @@ static void visualize(const std::vector<bevfusion::head::transbbox::BoundingBox>
 
   nv::ImageArtistParameter image_artist_param;
   image_artist_param.num_camera = images.size();
-  image_artist_param.image_width = 1600;
-  image_artist_param.image_height = 900;
+  image_artist_param.image_width = 1936;
+  image_artist_param.image_height = 1464;
   image_artist_param.image_stride = image_artist_param.image_width * 3;
   image_artist_param.viewport_nx4x4.resize(images.size() * 4 * 4);
   memcpy(image_artist_param.viewport_nx4x4.data(), lidar2image.ptr<float>(),
@@ -153,11 +153,11 @@ std::shared_ptr<bevfusion::Core> create_core(const std::string& model, const std
 
   printf("Create by %s, %s\n", model.c_str(), precision.c_str());
   bevfusion::camera::NormalizationParameter normalization;
-  normalization.image_width = 1600;
-  normalization.image_height = 900;
+  normalization.image_width = 1936;
+  normalization.image_height = 1464;
   normalization.output_width = 704;
   normalization.output_height = 256;
-  normalization.num_camera = 6;
+  normalization.num_camera = 1;
   normalization.resize_lim = 0.48f;
   normalization.interpolation = bevfusion::camera::Interpolation::Bilinear;
 
@@ -196,7 +196,7 @@ std::shared_ptr<bevfusion::Core> create_core(const std::string& model, const std
   geometry.image_height = 256;
   geometry.feat_width = 88;
   geometry.feat_height = 32;
-  geometry.num_camera = 6;
+  geometry.num_camera = 1;
   geometry.geometry_dim = nvtype::Int3(360, 360, 80);
 
   bevfusion::head::transbbox::TransBBoxParameter transbbox;

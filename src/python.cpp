@@ -85,11 +85,11 @@ class BEVFusion {
 
   bool load(string camera, string vtransform, string lidar, string fuser, string headbbox, string precision) {
     bevfusion::camera::NormalizationParameter normalization;
-    normalization.image_width = 1600;
-    normalization.image_height = 900;
+    normalization.image_width = 1936;
+    normalization.image_height = 1464;
     normalization.output_width = 704;
     normalization.output_height = 256;
-    normalization.num_camera = 6;
+    normalization.num_camera = 1;
     normalization.resize_lim = 0.48f;
     normalization.interpolation = bevfusion::camera::Interpolation::Bilinear;
 
@@ -128,7 +128,7 @@ class BEVFusion {
     geometry.image_height = 256;
     geometry.feat_width = 88;
     geometry.feat_height = 32;
-    geometry.num_camera = 6;
+    geometry.num_camera = 1;
     geometry.geometry_dim = nvtype::Int3(360, 360, 80);
 
     bevfusion::head::transbbox::TransBBoxParameter transbbox;
