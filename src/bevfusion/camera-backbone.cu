@@ -44,16 +44,15 @@ class BackboneImplement : public Backbone {
     engine_ = TensorRT::load(model);
     if (engine_ == nullptr) return false;
 
-    depth_dims_ = engine_->static_dims(2);
-    feature_dims_ = engine_->static_dims(3);
-    int32_t volumn = std::accumulate(depth_dims_.begin(), depth_dims_.end(), 1, std::multiplies<int32_t>());
-    checkRuntime(cudaMalloc(&depth_weights_, volumn * sizeof(nvtype::half)));
 
-    volumn = std::accumulate(feature_dims_.begin(), feature_dims_.end(), 1, std::multiplies<int32_t>());
-    checkRuntime(cudaMalloc(&feature_, volumn * sizeof(nvtype::half)));
+    depth_dims_ = {1, 118, 32, 88};     // Just one camera
+    feature_dims_ = {1, 32, 88, 80, 1}; // Adjusted for one camera
 
-    // N C D H W
-    camera_shape_ = {feature_dims_[0], feature_dims_[3], depth_dims_[1], feature_dims_[1], feature_dims_[2]};
+    camera_shape_ = {1, 80, 118, 32, 88}; // Just one camera
+
+    int num_bindings = engine_->bindingCount();
+    printf("Number of bindings: %f",  num_bindings );
+
     return true;
   }
 
